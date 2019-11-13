@@ -1,27 +1,29 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Router, {RouteConfig, Route} from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
+// interface只做类型批注
+export const constantRoutes: RouteConfig[] = [];
+
+export const asyncRoutes: RouteConfig[] = [];
+
+const createRouter = () => new Router({
+  scrollBehavior: (to:Route, from:Route, savedPosition:any) => {
+    if(savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0}
+    }
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+  routes: constantRoutes
+});
 
-const router = new VueRouter({
-  routes
-})
+const router = createRouter()
+
+export function resetRouter() {
+  const newRouter = createRouter();
+  (router as any).matcher = (newRouter as any).matcher;
+}
 
 export default router
