@@ -1,8 +1,10 @@
 const path = require('path')
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 
 const devServePort = 9527
 const mockServePort = 9528
 const name = 'Vue Typescript Admination'
+const smp = new SpeedMeasurePlugin()
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/vue_ts_admin/' : '/',
@@ -20,7 +22,7 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'scss',
       patterns: [
-        path.resolve(__dirname, 'src/style/_variables.scss'),
+        path.resolve(__dirname, 'src/style/_variable.scss'),
         path.resolve(__dirname, 'src/style/_mixins.scss')
       ]
     }

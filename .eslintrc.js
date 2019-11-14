@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  env: {
+  env: { // 设置其他环境的环境变量 browser node es6 mocha
     node: true
   },
   'extends': [
@@ -12,8 +12,8 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
-  parserOptions: {
-    parser: '@typescript-eslint/parser'
+  parserOptions: { // 校验escam的版本 parser ecmaVersion sourceType ecmaFeature
+    parser: '@typescript-eslint/parser',
   },
   overrides: [
     {
