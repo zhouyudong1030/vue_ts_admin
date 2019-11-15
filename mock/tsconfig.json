@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 指定ECMAScript目标版本
+    "module": "commonjs", // 指定模块的代码生成
+    "strict": true,
+    "jsx": "preserve", // 支持tsx文件
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "node",
+      "webpack-env"
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -7,11 +7,26 @@ Vue.use(Router)
 export const constantRoutes: RouteConfig[] = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/test'
   },
   {
     path: '/login',
-    component: () => import(/* webpackChunkName: "login" */ '@/views/login/index.vue')
+    component: () => import(/* webpackChunkName: "login" */ '@/views/login/index.vue'),
+    meta: { hidden: true }
+  },
+  {
+    path: '/401',
+    component: () => import(/* webpackChunkName: "401" */ '@/views/error-page/401.vue'),
+    meta: { hidden: true }
+  },
+  {
+    path: '/404',
+    component: () => import(/* webpackChunkName: "404" */ '@/views/error-page/404.vue'),
+    meta: { hidden: true }
+  },
+  {
+    path: '/test',
+    component: () => import(/* webpackChunkName: ''test */ '@/layout/components/AppMain.vue')
   }
 ]
 
