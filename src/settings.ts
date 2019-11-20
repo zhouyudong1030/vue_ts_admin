@@ -1,3 +1,4 @@
+// 接口定义
 interface ISettings {
   title: string,
   showSettings: boolean,
@@ -10,6 +11,7 @@ interface ISettings {
   mockServerPort: number
 }
 
+// 接口实现
 const settings: ISettings = {
   title: 'Vue Typescript Admin',
   showSettings: true,

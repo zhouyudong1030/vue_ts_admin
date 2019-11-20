@@ -1,7 +1,7 @@
 import { VuexModule, Module, Mutation, Action, getModule } from 'vuex-module-decorators'
 import store from '@/store'
 import elementVariables from '@/style/element-variables.scss'
-import defaultSettings from '@/settings'
+import defaultSettings from '@/settings' // 全局设置
 
 export interface ISettingsState {
   theme: string,
@@ -25,6 +25,7 @@ class Settings extends VuexModule implements ISettingsState {
   private CHANGE_SETTING(payload: { key: string, value: any }) {
     const { key, value } = payload
     if (Object.prototype.hasOwnProperty.call(this, key)) {
+      // 断言(<any>this)[key]
       (this as any)[key] = value
     }
   }

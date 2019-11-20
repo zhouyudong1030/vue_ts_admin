@@ -2,11 +2,13 @@ import { VuexModule, Module, Mutation, Action, getModule } from 'vuex-module-dec
 import { getSidebarStatus, getSize, setSidebarStatus, setSize } from '@/utils/cookies'
 import store from '@/store'
 
+// 定义枚举类型并且导出
 export enum DeviceType {
   Mobile,
   Desktop
 }
 
+// 定义接口并使得模块实现这个接口
 export interface IAppState {
   device: DeviceType,
   sidebar: {

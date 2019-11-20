@@ -2,16 +2,17 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import SvgIcon from 'vue-svgicon'
 import './registerServiceWorker'
 import ElementUI from 'element-ui'
 import 'normalize.css'
+import SvgIcon from 'vue-svgicon'
 import '@/icons/components'
 import '@/style/element-variables.scss'
 import '@/style/index.scss'
 
 Vue.config.productionTip = false
 
+// 使用vue-svgicon,将svg图片转化为svg组件
 Vue.use(SvgIcon, {
   tagName: 'svg-icon',
   defaultWidth: '1em',

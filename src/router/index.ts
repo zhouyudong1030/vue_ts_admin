@@ -3,7 +3,7 @@ import Router, { RouteConfig, Route } from 'vue-router'
 
 Vue.use(Router)
 
-// interface只做类型批注
+// interface只做类型批注 可选/只读 函数声明使用type
 export const constantRoutes: RouteConfig[] = [
   {
     path: '/',

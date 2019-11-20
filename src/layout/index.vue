@@ -13,7 +13,10 @@ import ResizeMixin from './mixin/resize'
 @Component({
   name: 'Layout'
 })
+
+// Vue中使用mixins
 export default class extends mixins(ResizeMixin) {
+  // computed属性
   get classObj () {
     return {
       hideSideBar: !this.sidebar.opened,
